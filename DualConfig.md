@@ -24,7 +24,7 @@ source ~/.scidbrc
 export SCIDB="/opt/scidb/$SCIDB_VER/"
 ```
 
-3. 
+3.
 ```
 source .bashrc
 ```
