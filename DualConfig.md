@@ -35,7 +35,7 @@ scidb.py startall <15.12DBNAME>
 
 And you can verify the running version of SciDB by:
 ```
-iquery -aq "list('libraries')" | grep scidb
+iquery -aq "list('libraries')" | grep -i scidb
 ```
 
 
