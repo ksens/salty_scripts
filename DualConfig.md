@@ -1,12 +1,7 @@
-# Script to switch back and forth
+# Script to switch back and forth between SciDB versions
 
-Add the following lines to `.bashrc`:
-```
-alias switchto15p12="cp .scidbrc.15.12 .scidbrc; source .bashrc"
-alias switchto15p7="cp .scidbrc.15.7 .scidbrc; source .bashrc"
-```
-
-where the only difference between 15.12 and 15.7 is only in `SCIDB_VER`
+1.
+There should be a `.scidbrc` existing already (under `scidb` user home). Copy that into two files `.scidbrc.15.12` and `.scidb.rc.15.7`. Then edit the file so that the only difference between 15.12 and 15.7 versions is in `SCIDB_VER`
 
 For example, `.scidbrc.15.12` looks like:
 ```
@@ -16,12 +11,20 @@ export IQUERY_PORT=1239
 export IQUERY_HOST=localhost
 ```
 
-Note that `.bashrc` should also source the `.scidbrc` file and have not independent references. This are the SciDB specific lines `.bashrc`:
+2.
+Add the following lines to `.bashrc`:
+```
+alias switchto15p12="cp .scidbrc.15.12 .scidbrc; source .bashrc"
+alias switchto15p7="cp .scidbrc.15.7 .scidbrc; source .bashrc"
+```
+
+Note that `.bashrc` should source the `.scidbrc` file and not have any independent references to the SciDB version. These are typically the SciDB specific lines in `.bashrc`:
 ```
 source ~/.scidbrc
 export SCIDB="/opt/scidb/$SCIDB_VER/"
 ```
 
+3.
 Now you can just execute the commands
 ```
 # SciDB 15.7 is running. First, stop it
