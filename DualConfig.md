@@ -24,7 +24,12 @@ source ~/.scidbrc
 export SCIDB="/opt/scidb/$SCIDB_VER/"
 ```
 
-3.
+3. 
+```
+source .bashrc
+```
+
+4.
 Now you can just execute the commands
 ```
 # SciDB 15.7 is running. First, stop it
