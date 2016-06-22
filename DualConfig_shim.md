@@ -32,7 +32,7 @@ tail -f ~/scidb_data_ksen/000/0/scidb.log | grep Executing &
 # Issue a few SciDBR commands and download any small array from the database
 R --slave -e 'library(scidb); scidbconnect(); df = iquery("exchanges", return=TRUE)'
 
-# Finally, after confirming that all is well, kill the live grep
+# Finally, after confirming that all save queries use `aio_save`, kill the live grep
 fg
 ^C
 
