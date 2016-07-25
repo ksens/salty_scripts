@@ -3,7 +3,7 @@ First check the version of shim installed on the nodes
 sshg $ALL "sudo yum list installed \"shim\" | grep shim"
 ```
 
-To change the version of shim on any one node (you can modify the commands to work with `sshg`):
+To change the version of shim on any one node (you can modify the commands to work with `sshg`)
 ```
 # Remove the current version
 sudo yum remove shim
