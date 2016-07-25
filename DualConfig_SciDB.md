@@ -14,8 +14,8 @@ export IQUERY_HOST=localhost
 2.
 Add the following lines to `.bashrc`:
 ```
-alias switchto15p12="cp .scidbrc.15.12 .scidbrc; source .bashrc"
-alias switchto15p7="cp .scidbrc.15.7 .scidbrc; source .bashrc"
+alias switchto15p12="cp ~/.scidbrc.15.12 ~/.scidbrc; source ~/.bashrc"
+alias switchto15p7="cp ~/.scidbrc.15.7 ~/.scidbrc; source ~/.bashrc"
 ```
 
 Note that `.bashrc` should source the `.scidbrc` file and not have any independent references to the SciDB version. These are typically the SciDB specific lines in `.bashrc`:
