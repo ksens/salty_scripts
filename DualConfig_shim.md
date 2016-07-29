@@ -27,10 +27,10 @@ sudo service shimsvc start
 Finally check that aio_save is actually working OK
 ```
 # Start a live grep of the log file 
-tail -f ~/scidb_data_ksen/000/0/scidb.log | grep Executing &
+tail -f PATH_TO_SCIDB_DIR/0/0/scidb.log | grep Executing &
 
 # Issue a few SciDBR commands and download any small array from the database
-R --slave -e 'library(scidb); scidbconnect(); df = iquery("exchanges", return=TRUE)'
+R --slave -e 'library(scidb); scidbconnect(); df = iquery("build(<val:double>[i=0:3,2,0], random())", return=TRUE)'
 
 # Finally, after confirming that all save queries use `aio_save`, kill the live grep
 fg
