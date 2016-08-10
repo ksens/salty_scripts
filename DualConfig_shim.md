@@ -32,8 +32,12 @@ tail -f PATH_TO_SCIDB_DIR/0/0/scidb.log | grep Executing &
 # Issue a few SciDBR commands and download any small array from the database
 R --slave -e 'library(scidb); scidbconnect(); df = iquery("build(<val:double>[i=0:3,2,0], random())", return=TRUE)'
 
-# Finally, after confirming that all save queries use `aio_save`, kill the live grep
+# Finally, after confirming that the main save query (i.e. the one which downloads the data) uses `aio_save`, kill the live grep
 fg
 ^C
 
 ```
+
+## Note
+
+At one point of SciDBR development, all save queries could be replaced by `aio_save`. This was broken in a particular version. See issue description https://github.com/Paradigm4/SciDBR/issues/101
